@@ -1,0 +1,24 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    
+    // RSVPs collection - open read for all alumni to view live attendees, open create for submitting RSVP
+    match /rsvps/{rsvpId} {
+      allow read: if true;
+      allow create: if request.resource.data.name is string 
+                    && request.resource.data.name.size() > 0
+                    && request.resource.data.phone is string
+                    && request.resource.data.status in ['hadir', 'ragu', 'tidak_hadir'];
+      allow update: if request.resource.data.name is string;
+      allow delete: if false;
+    }
+
+    // Guestbook collection - open read and create for alumni well-wishes
+    match /guestbook/{messageId} {
+      allow read: if true;
+      allow create: if request.resource.data.name is string 
+                    && request.resource.data.message is string;
+      allow update, delete: if false;
+    }
+  }
+}

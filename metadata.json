@@ -1,0 +1,6 @@
+{
+  "name": "Undangan Reuni Temu Kangen SMPN 149 Jakarta Timur",
+  "description": "Undangan digital interaktif Reuni dan Temu Kangen Keluarga Besar Alumni 2006 SMP Negeri 149 Jakarta Timur pada 25 Oktober 2026 di Mekar Lesehan dengan RSVP, countdown, musik latar, Google Maps, notifikasi pengingat WhatsApp, dan buku tamu digital.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

@@ -1,0 +1,32 @@
+{
+  "entities": {
+    "rsvps": {
+      "title": "RSVP Kehadiran Alumni",
+      "description": "Data konfirmasi kehadiran reuni alumni 2006 SMPN 149",
+      "type": "object",
+      "properties": {
+        "name": { "type": "string", "description": "Nama alumni" },
+        "graduationYear": { "type": "string", "description": "Tahun kelulusan" },
+        "className": { "type": "string", "description": "Kelas di SMPN 149" },
+        "phone": { "type": "string", "description": "Nomor WhatsApp" },
+        "status": { "type": "string", "enum": ["hadir", "ragu", "tidak_hadir"], "description": "Status kehadiran" },
+        "attendeesCount": { "type": "number", "description": "Jumlah orang yang hadir" },
+        "notes": { "type": "string", "description": "Pesan atau catatan untuk panitia" },
+        "createdAt": { "type": "string", "description": "Waktu submit ISO string" }
+      },
+      "required": ["name", "phone", "status"]
+    },
+    "guestbook": {
+      "title": "Buku Tamu & Ucapan",
+      "description": "Pesan ucapan dan doa reuni dari alumni",
+      "type": "object",
+      "properties": {
+        "name": { "type": "string", "description": "Nama alumni" },
+        "className": { "type": "string", "description": "Kelas" },
+        "message": { "type": "string", "description": "Pesan doa/kesan" },
+        "createdAt": { "type": "string", "description": "Waktu pesan" }
+      },
+      "required": ["name", "message"]
+    }
+  }
+}
